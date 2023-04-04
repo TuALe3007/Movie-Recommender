@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+    body {
+       font-size: 200%
+    }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/home">Home</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/groupRecommendation">Group Recommendation</a></li>
+            <li><a href="/addRating">Add Rating</a></li>
+            <li><a href="/reload">Reload</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="jumbotron text-center">
+    <h1>Welcome, {{user}}!</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <h2>Movie Samples:</h2>
+        <div style="display: in-line; background-color: lightgray; border: 1px solid black; height=400px; width=2500px; overflow-x:scroll; overflow-y:hidden; white-space:nowrap">
+        {% for j in range(0, 30) %}
+            <img src={{posters['imageURL'].get(j)}} width="250" height="300">
+        {% endfor %}
+        </div>
+        <br>
+        <h2>Recommendations based on your reviews:</h2>
+        <div style="display: in-line; background-color: lightgray; border: 1px solid black; height=400px; width=2500px; overflow-x:scroll; overflow-y:hidden; white-space:nowrap">
+        {% for i in range(0, len_r) %}
+            <a href="http://www.google.com/search?q={{rec_title[i]}}" target="_blank"><img src={{recs[i]}} width="250" height="300"></a>
+        {% endfor %}
+        </div>
+        <br>
+
+        <h2>Most popular movies:</h2>
+        <div style="display: in-line; background-color: lightgray; border: 1px solid black; height=400px; width=2500px; overflow-x:scroll; overflow-y:hidden; white-space:nowrap">
+        {% for p in range(0, len_p) %}
+            <a href="http://www.google.com/search?q={{pop_title[p]}}" target="_blank"><img src={{pop[p]}} width="250" height="300"></a>
+        {% endfor %}
+        </div>
+        <br><br>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Rating</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+           font-size: 200%
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/home">Home</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/groupRecommendation">Group Recommendation</a></li>
+                <li><a href="/addRating">Add Rating</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="jumbotron text-center">
+        <h1>Add Rating</h1>
+    </div>
+
+    <form method="post">
+        <p><b>Movie name: </b><input type="text" size="60" name="movieName" required></p><br>
+        <p><b>Rating: </b><input type="number" name="rating" min="0" max="5" style="width:50px" step="0.5" required> </p>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>
